@@ -2,8 +2,14 @@ package com.nob.p2.endereco;
 
 import com.nob.p2.usuario.Usuario;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Endereco {
 
     @Id

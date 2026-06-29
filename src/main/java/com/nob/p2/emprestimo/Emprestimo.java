@@ -3,9 +3,15 @@ package com.nob.p2.emprestimo;
 import com.nob.p2.livro.Livro;
 import com.nob.p2.usuario.Usuario;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Emprestimo {
 
     @Id
