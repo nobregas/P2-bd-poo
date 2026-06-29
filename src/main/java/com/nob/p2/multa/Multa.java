@@ -15,10 +15,11 @@ public class Multa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_multa")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "emprestimo_id")
+    @JoinColumn(name = "id_emprestimo_fk")
     private Emprestimo emprestimo;
 
     private BigDecimal valor;

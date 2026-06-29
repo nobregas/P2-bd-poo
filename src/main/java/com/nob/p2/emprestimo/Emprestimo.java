@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -16,17 +17,18 @@ public class Emprestimo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_emprestimo")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "id_usuario_fk")
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "livro_id")
+    @JoinColumn(name = "id_livro_fk")
     private Livro livro;
 
-    private LocalDate dataSaida;
+    private LocalDateTime dataSaida;
     private LocalDate dataPrevista;
-    private LocalDate dataDevolucao;
+    private LocalDateTime dataDevolucao;
 }

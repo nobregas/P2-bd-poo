@@ -14,11 +14,14 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private Long id;
 
     private String nome;
+    private String cpf;
     private String email;
     private String senha;
+    private Boolean ativo;
 
     @Enumerated(EnumType.STRING)
     private Role tipo;

@@ -14,12 +14,12 @@ public class LogAuditoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_log")
     private Long id;
 
-    private String tabela;
-    private String operacao;
+    private String tabelaAfetada;
+    private String acao;
+    private String usuarioResponsavel;
     private String dadosAntigos;
-    private String dadosNovos;
-    private String usuario;
     private LocalDateTime dataHora;
 }
