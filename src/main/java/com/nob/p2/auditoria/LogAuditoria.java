@@ -15,7 +15,7 @@ public class LogAuditoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_log")
-    private Long id;
+    private Integer id;
 
     private String tabelaAfetada;
     private String acao;
