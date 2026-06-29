@@ -155,6 +155,9 @@ SELECT
     SUM(CASE WHEN m.pago = 0 THEN m.valor ELSE 0 END) AS soma_pendente
 FROM multas m;
 
+CREATE OR REPLACE VIEW vw_login_usuario AS
+SELECT id_usuario, nome, cpf, email, senha, tipo, ativo FROM usuarios;
+
 DELIMITER $$
 
 CREATE PROCEDURE sp_transacao_emprestimo(
@@ -485,5 +488,12 @@ REVOKE DELETE ON db_libritech.livros FROM 'usr_estagiario'@'localhost';
 GRANT SELECT ON db_libritech.vw_acervo_publico TO 'usr_aluno'@'localhost';
 GRANT SELECT ON db_libritech.vw_livros_atrasados TO 'usr_aluno'@'localhost';
 GRANT SELECT ON db_libritech.vw_ranking_leitura TO 'usr_aluno'@'localhost';
+GRANT SELECT ON db_libritech.vw_login_usuario TO 'usr_aluno'@'localhost';
+GRANT SELECT ON db_libritech.emprestimos TO 'usr_aluno'@'localhost';
+
+GRANT SELECT ON db_libritech.vw_login_usuario TO 'usr_estagiario'@'localhost';
+GRANT SELECT ON db_libritech.vw_login_usuario TO 'usr_bibliotecario'@'localhost';
+GRANT SELECT ON db_libritech.vw_ranking_leitura TO 'usr_bibliotecario'@'localhost';
+GRANT SELECT ON db_libritech.vw_login_usuario TO 'usr_gerente'@'localhost';
 
 FLUSH PRIVILEGES;

@@ -1,34 +1,16 @@
 package com.nob.p2.emprestimo;
 
-import com.nob.p2.livro.Livro;
-import com.nob.p2.usuario.Usuario;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "emprestimos")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class Emprestimo {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_emprestimo")
     private Integer id;
-
-    @ManyToOne
-    @JoinColumn(name = "id_usuario_fk")
-    private Usuario usuario;
-
-    @ManyToOne
-    @JoinColumn(name = "id_livro_fk")
-    private Livro livro;
-
+    private Integer idUsuario;
+    private Integer idLivro;
     private LocalDateTime dataSaida;
     private LocalDate dataPrevista;
     private LocalDateTime dataDevolucao;
