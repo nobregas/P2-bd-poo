@@ -1,29 +1,15 @@
 package com.nob.p2.endereco;
 
-import com.nob.p2.usuario.Usuario;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
-@Table(name = "enderecos")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class Endereco {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_endereco")
     private Integer id;
-
     private String logradouro;
     private String bairro;
     private String cidade;
     private String uf;
-
-    @ManyToOne
-    @JoinColumn(name = "id_usuario_fk")
-    private Usuario usuario;
+    private Integer idUsuario;
 }

@@ -1,22 +1,13 @@
 package com.nob.p2.auditoria;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import java.time.LocalDateTime;
 
-@Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class LogAuditoria {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_log")
     private Integer id;
-
     private String tabelaAfetada;
     private String acao;
     private String usuarioResponsavel;
